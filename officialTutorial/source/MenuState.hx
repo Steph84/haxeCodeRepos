@@ -1,6 +1,8 @@
 package;
 
 import flixel.FlxState;
+import flixel.graphics.FlxGraphic;
+import flixel.system.FlxAssets;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.util.FlxAxes;
@@ -26,7 +28,7 @@ class MenuState extends FlxState
 		//_btnPlay.screenCenter();
 		//_btnReset.screenCenter();
 		
-		_btnPlay.loadGraphic("", false, 32, 32);
+		_btnPlay.loadGraphic("assets/images/sheet_button.png", true, 49, 49);
 		
 		//FlxUI9SliceSprite
 		
