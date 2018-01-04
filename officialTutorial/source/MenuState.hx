@@ -6,7 +6,9 @@ import flixel.system.FlxAssets;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.util.FlxAxes;
-import flixel.addons.ui.FlxUI9SliceSprite;
+//import flixel.addons.ui.FlxUI9SliceSprite;
+import flixel.system.scaleModes.RelativeScaleMode;
+//import openfl.Display.Window;
 
 /**
  * ...
@@ -19,10 +21,13 @@ class MenuState extends FlxState
 
 	override public function create():Void
 	{
+		new WindowResizeDimension();
+		
 		_btnPlay = new FlxButton(0, 0, "Play", clickPlay);
 		_btnReset = new FlxButton(100, 100, "Reset", clickPlay);
 		
 		_btnPlay.screenCenter(FlxAxes.X);
+		_btnPlay.screenCenter();
 		_btnReset.screenCenter(FlxAxes.Y);
 		
 		//_btnPlay.screenCenter();
@@ -40,6 +45,10 @@ class MenuState extends FlxState
 
 	override public function update(elapsed:Float):Void
 	{
+		if (FlxG.keys.justPressed.SPACE)
+		{
+			FlxG.scaleMode = new RelativeScaleMode(1.5, 1.5);
+		}
 		super.update(elapsed);
 	}
 	
